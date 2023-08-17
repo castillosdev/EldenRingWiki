@@ -1,0 +1,37 @@
+@page "/testnpcs"
+@inject NpcService NpcServiceInstance
+
+<h3>Test NPC List</h3>
+
+@if (npcs == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="npc-list">
+        @foreach (var npc in npcs)
+        {
+            <div class="npc-item">
+                <h4>@npc.Name</h4>
+                <img src="@npc.Image" alt="@npc.Name" width="100" /> <!-- Display the NPC image -->
+                <p><strong>Location:</strong> @npc.Location</p>
+                <p><strong>Role:</strong> @npc.Role</p>
+                @if (!string.IsNullOrWhiteSpace(npc.Quote))
+                {
+                    <blockquote>@npc.Quote</blockquote>
+                }
+                <!-- Display other NPC details as needed -->
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private IEnumerable<Npc>? npcs;
+
+    protected override async Task OnInitializedAsync()
+    {
+        npcs = await NpcServiceInstance.GetAllNpcs();
+    }
+}

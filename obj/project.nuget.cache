@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VCVnEnyra1A7A08YzlHNcFt61fCXKLSw91PsYORJuhxqp+bkipCK11Clpp6BN5a47bxbVsmt/3lJPide67v1fg==",
+  "dgSpecHash": "ErglDiVtUhiieGf/RNtZbH/7t95i3RW614xQ3KDwKgUcZrPIblrzQCfFi0+UG7Xf6h3L2b7qzUZkaMlpgCeIFA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\louis\\BlazorSites\\EldenRingWiki\\EldenRingWiki.csproj",
+  "projectFilePath": "C:\\Users\\louis\\BlazorSites\\EldenRingWiki\\EldenRingWiki.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\louis\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.10\\microsoft.aspnetcore.authorization.7.0.10.nupkg.sha512",
     "C:\\Users\\louis\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.10\\microsoft.aspnetcore.components.7.0.10.nupkg.sha512",
