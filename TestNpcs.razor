@@ -9,19 +9,20 @@
 }
 else
 {
-    <div class="npc-list">
+    <div class="row">
         @foreach (var npc in npcs)
         {
-            <div class="npc-item">
-                <h4>@npc.Name</h4>
-                <img src="@npc.Image" alt="@npc.Name" width="100" /> <!-- Display the NPC image -->
-                <p><strong>Location:</strong> @npc.Location</p>
-                <p><strong>Role:</strong> @npc.Role</p>
-                @if (!string.IsNullOrWhiteSpace(npc.Quote))
-                {
-                    <blockquote>@npc.Quote</blockquote>
-                }
-                <!-- Display other NPC details as needed -->
+            <div class="col-md-4 mb-4">
+                <div class="npc-item bg-secondary ">
+                    <h4>@npc.Name</h4>
+                    <img src="@npc.Image" alt="@npc.Name" class="rounded img-fluid  object-fit-cover img-max"/>
+                    <p><strong>Location:</strong> @npc.Location</p>
+                    <p><strong>Role:</strong> @npc.Role</p>
+                    @if (!string.IsNullOrWhiteSpace(npc.Quote))
+                    {
+                        <blockquote>@npc.Quote</blockquote>
+                    }
+                </div>
             </div>
         }
     </div>
