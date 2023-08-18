@@ -10,7 +10,7 @@ namespace EldenRingWiki.Services
     public class LocationService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiUrl = "https://eldenring.fanapis.com/api/locations"; // Ideally, fetch from configuration.
+        private readonly string _apiUrl = "https://eldenring.fanapis.com/api/locations?limit=500"; // Ideally, fetch from configuration.
         private readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true

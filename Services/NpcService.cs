@@ -10,7 +10,7 @@ namespace EldenRingWiki.Services
     public class NpcService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiUrl = "https://eldenring.fanapis.com/api/npcs"; // Ideally, fetch from configuration.
+        private readonly string _apiUrl = "https://eldenring.fanapis.com/api/npcs?limit=500"; // Ideally, fetch from configuration.
         private readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true
