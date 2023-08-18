@@ -123,5 +123,7 @@ a, .btn-link {
         border-radius: 15px;
         margin: .75rem 0;
         max-width: 300px;
+        max-height: 300px;
         width: 100%;
+        object-fit: contain;
       }

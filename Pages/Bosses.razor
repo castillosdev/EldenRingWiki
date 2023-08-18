@@ -12,10 +12,10 @@ else
     <div class="row">
         @foreach (var boss in bosses)
         {
-            <div class="col-md-4 mb-4 ">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class=" data-item px-5 max-height-400">
                     <h4 class="data-item_heading mt-5">@boss.Name</h4>
-                    <img src="@boss.Image" alt="@boss.Name" class="rounded img-fluid  object-fit-cover img-max data-item_image"/>
+                    <img src="@boss.Image" alt="@boss.Name" class="data-item_image"/>
                     <p><strong>Location:</strong> @boss.Location</p>
                 </div>
             </div>
