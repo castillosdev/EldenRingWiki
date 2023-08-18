@@ -112,6 +112,7 @@ a, .btn-link {
         flex-direction: column;
         background-color: whitesmoke;
         border-radius: 15px;
+        transition: all 1s ease-in-out;
       }
 
       .data-item_heading{
