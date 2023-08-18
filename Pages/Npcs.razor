@@ -1,7 +1,7 @@
-@page "/testnpcs"
+@page "/npcs"
 @inject NpcService NpcServiceInstance
 
-<h3>Test NPC List</h3>
+<h3>NPC List</h3>
 
 @if (npcs == null)
 {
@@ -12,10 +12,10 @@ else
     <div class="row">
         @foreach (var npc in npcs)
         {
-            <div class="col-md-4 mb-4">
-                <div class="npc-item bg-secondary ">
-                    <h4>@npc.Name</h4>
-                    <img src="@npc.Image" alt="@npc.Name" class="rounded img-fluid  object-fit-cover img-max"/>
+            <div class="col-md-4 mb-4 ">
+                <div class="npc-item data-item px-5 max-height-400">
+                    <h4 class="data-item_heading mt-5">@npc.Name</h4>
+                    <img src="@npc.Image" alt="@npc.Name" class="data-item_image"/>
                     <p><strong>Location:</strong> @npc.Location</p>
                     <p><strong>Role:</strong> @npc.Role</p>
                     @if (!string.IsNullOrWhiteSpace(npc.Quote))

@@ -1,0 +1,34 @@
+@page "/locations"
+@inject LocationService LocationServiceInstance
+
+<h3>Test Location List</h3>
+
+@if (locations == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        @foreach (var location in locations)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="data-item px-5 max-height-400">
+                    <h4 class="data-item_heading mt-5">@location.Name</h4>
+                    <img src="@location.Image" alt="@location.Name" class="data-item_image"/>
+                    <p><strong>Description:</strong> @location.Description</p>
+                    <!-- Display other location details as needed -->
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private IEnumerable<Location>? locations;
+
+    protected override async Task OnInitializedAsync()
+    {
+        locations = await LocationServiceInstance.GetAlllocations();
+    }
+}

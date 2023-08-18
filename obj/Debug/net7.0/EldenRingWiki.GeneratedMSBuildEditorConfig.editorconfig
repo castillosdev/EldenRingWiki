@@ -20,8 +20,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/louis/BlazorSites/EldenRingWiki/Pages/Bosses.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9zc2VzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/louis/BlazorSites/EldenRingWiki/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/louis/BlazorSites/EldenRingWiki/Pages/Creatures.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXR1cmVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/louis/BlazorSites/EldenRingWiki/Pages/FetchData.razor]
@@ -32,12 +40,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/louis/BlazorSites/EldenRingWiki/Shared/SurveyPrompt.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+[C:/Users/louis/BlazorSites/EldenRingWiki/Pages/Locations.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9jYXRpb25zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/louis/BlazorSites/EldenRingWiki/TestNpcs.razor]
-build_metadata.AdditionalFiles.TargetPath = VGVzdE5wY3MucmF6b3I=
+[C:/Users/louis/BlazorSites/EldenRingWiki/Pages/Npcs.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTnBjcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/louis/BlazorSites/EldenRingWiki/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/louis/BlazorSites/EldenRingWiki/_Imports.razor]

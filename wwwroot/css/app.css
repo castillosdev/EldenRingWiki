@@ -99,7 +99,28 @@ a, .btn-link {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+      .min-height-400{
+        min-height: 400px
+      }
+      .max-height-400{
+        max-height: 600px;
+        height: 100%;
+      }
 
-    .img-max {
-        max-width: 300px
+      .data-item{
+        display: flex;
+        flex-direction: column;
+        background-color: whitesmoke;
+        border-radius: 15px;
+      }
+
+      .data-item_heading{
+        font-size: 1.5rem;
+      }
+
+      .data-item_image{
+        border-radius: 15px;
+        margin: .75rem 0;
+        max-width: 300px;
+        width: 100%;
       }
