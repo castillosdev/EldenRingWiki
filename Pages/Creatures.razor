@@ -3,31 +3,59 @@
 
 <h3>Creatures List</h3>
 
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-12 mb-4">
+        <input type="text" class="form-control" @bind-value="searchQuery" @oninput="SearchCreatures" placeholder="Search by name..." />
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-12 mb-4">
+        <button class="btn btn-primary" @onclick="SearchCreatures">Search</button>
+    </div>
+</div>
+
 @if (creatures == null)
 {
     <p><em>Loading...</em></p>
 }
-else
+else if (creatures.Any())
 {
     <div class="row">
         @foreach (var creature in creatures)
         {
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 ">
-                <div class="npc-item data-item px-5 max-height-400">
+                <div class="npc-item data-item px-5 max-height-400 hover-shadow">
                     <h4 class="data-item_heading mt-5">@creature.Name</h4>
-                    <img src="@creature.Image" alt="@creature.Name" class="data-item_image"/>
+                    <img src="@creature.Image" alt="@creature.Name" class="data-item_image" />
                     <p><strong>Location:</strong> @creature.Location</p>
                 </div>
             </div>
         }
     </div>
 }
+else
+{
+    <p><em>No creatures found...</em></p>
+}
 
 @code {
-    private IEnumerable<Creature>? creatures;
+    private IEnumerable<Creature> creatures;
+    private IEnumerable<Creature> allCreatures;
+    private string searchQuery = "";
 
     protected override async Task OnInitializedAsync()
     {
-        creatures = await CreatureServiceInstance.GetAllCreatures();
+        allCreatures = await CreatureServiceInstance.GetAllCreatures();
+        creatures = allCreatures;
+    }
+
+    private void SearchCreatures()
+    {
+        if (string.IsNullOrWhiteSpace(searchQuery))
+        {
+            creatures = allCreatures;
+        }
+        else
+        {
+            creatures = allCreatures.Where(c => c.Name.Contains(searchQuery, StringComparison.OrdinalIgnoreCase));
+        }
     }
 }

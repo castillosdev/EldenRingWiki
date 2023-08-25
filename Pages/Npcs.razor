@@ -2,18 +2,25 @@
 @inject NpcService NpcServiceInstance
 
 <h3>NPC List</h3>
-
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-12 mb-4">
+        <input type="text" class="form-control" placeholder="Search NPCs..." @bind-value="searchQuery" @oninput="SearchNpcs" />
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-12 mb-4">
+        <button class="btn btn-primary btn-block" @onclick="SearchNpcs">Search</button>
+    </div>
+</div>
 @if (npcs == null)
 {
     <p><em>Loading...</em></p>
 }
-else
+else if (npcs.Any())
 {
     <div class="row">
         @foreach (var npc in npcs)
         {
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 ">
-                <div class="npc-item data-item px-5 max-height-400">
+                <div class="npc-item data-item px-5 max-height-400 hover-shadow">
                     <h4 class="data-item_heading mt-5">@npc.Name</h4>
                     <img src="@npc.Image" alt="@npc.Name" class="data-item_image"/>
                     <p><strong>Location:</strong> @npc.Location</p>
@@ -27,12 +34,31 @@ else
         }
     </div>
 }
+else
+{
+    <p><em>No NPCs found...</em></p>
+}
 
 @code {
     private IEnumerable<Npc>? npcs;
+    private string? searchQuery;
+    private IEnumerable<Npc> allNpcs;
 
     protected override async Task OnInitializedAsync()
     {
-        npcs = await NpcServiceInstance.GetAllNpcs();
+        allNpcs = await NpcServiceInstance.GetAllNpcs();
+        npcs = allNpcs;
+    }
+
+    private void SearchNpcs()
+    {
+        if (!string.IsNullOrWhiteSpace(searchQuery))
+        {
+            npcs = allNpcs.Where(n => n.Name.Contains(searchQuery, StringComparison.OrdinalIgnoreCase));
+        }
+        else
+        {
+            npcs = allNpcs;
+        }
     }
 }

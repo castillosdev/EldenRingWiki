@@ -198,13 +198,13 @@
       "mscorlib.dll": "sha256-Xo3wdLenBZ41X73hGjkWTbEQZDKcQsnPFtlkePUxLY0=",
       "netstandard.dll": "sha256-qjqaAEP3hdLnU\/TnoCd8HaSa+0ruV1TpdaB2GUujGMw=",
       "System.Private.CoreLib.dll": "sha256-\/7uQ+eNo9u3H1mpgMko4D3tKZHeGRfsRjna0Dqsu62k=",
-      "EldenRingWiki.dll": "sha256-o3Wk4lHghmP0PnCyhb9NVGAJfvWlY0lzNd5w862+W\/M="
+      "EldenRingWiki.dll": "sha256-fZww3UXOB+K+pQROIwP3qNsWbrRWMw++ZX9FItgqaCk="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "EldenRingWiki.pdb": "sha256-0DBmRbkf1\/isHT+ftybWd2Uti7Xj\/JIq+KYUu1CetLc="
+      "EldenRingWiki.pdb": "sha256-MU\/nfgAOYTQFqHHv0Ji0Q5DAhhFUrZ5xWD+lWEMVHeI="
     },
     "runtime": {
       "dotnet.7.0.10.l1f01ok2sj.js": "sha256-qJB30QURoyH3y3WyayHu6nMFIx2XNOkXCez7tagGpvE=",

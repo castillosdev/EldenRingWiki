@@ -127,3 +127,8 @@ a, .btn-link {
         width: 100%;
         object-fit: contain;
       }
+
+      .hover-shadow:hover{
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        transition: all .3s ease-in-out;
+      }

@@ -2,32 +2,60 @@
 @inject BossService BossServiceInstance
 
 <h3>Boss List</h3>
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-12 mb-4">
+        <input type="text" class="form-control" @bind-value="searchQuery" @oninput="SearchBosses" placeholder="Search by name..." />
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-12 mb-4">
+        <button class="btn btn-primary" @onclick="SearchBosses">Search</button>
+    </div>
+</div>
 
 @if (bosses == null)
 {
     <p><em>Loading...</em></p>
 }
-else
+else if (bosses.Any())
 {
     <div class="row">
         @foreach (var boss in bosses)
         {
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class=" data-item px-5 max-height-400">
+                <div class="data-item px-5 max-height-400 hover-shadow">
                     <h4 class="data-item_heading mt-5">@boss.Name</h4>
-                    <img src="@boss.Image" alt="@boss.Name" class="data-item_image"/>
+                    <img src="@boss.Image" alt="@boss.Name" class="data-item_image" />
                     <p><strong>Location:</strong> @boss.Location</p>
                 </div>
             </div>
         }
     </div>
 }
+else
+{
+    <p><em>There are no bosses with that name.</em></p>
+}
 
 @code {
-    private IEnumerable<Boss>? bosses;
+    private IEnumerable<Boss> bosses;
+    private IEnumerable<Boss> allBosses;
+
+    private string searchQuery = "";
 
     protected override async Task OnInitializedAsync()
     {
-       bosses = await BossServiceInstance.GetAllBosses();
+        allBosses = await BossServiceInstance.GetAllBosses();
+        bosses = allBosses;
+    }
+
+    private void SearchBosses()
+    {
+        if (string.IsNullOrWhiteSpace(searchQuery))
+        {
+            bosses = allBosses;
+        }
+        else
+        {
+            bosses = allBosses.Where(l => l.Name.Contains(searchQuery, StringComparison.OrdinalIgnoreCase));
+        }
     }
 }
